@@ -34,7 +34,7 @@ class VideosRepository(private val videosDatabase: VideosDatabase){
     ){
         it.asDomainModel()
     }
-    
+
     suspend fun refreshVideos(){
         withContext(Dispatchers.IO){
             val playlist = Network.devbytes.getPlaylist().await()
